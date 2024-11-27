@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 
-import Layout from "../components/Layout";
+import Layout, { siteTitle } from "../components/Layout";
 import styles from "../styles/Home.module.css";
 import utilStyles from "../styles/utils.module.css";
 
@@ -21,7 +20,10 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout>
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
       <section className={`${utilStyles.headingMD} ${utilStyles.padding1px}`}>
         <a>神奈川県川崎市在住のフリーランスエンジニア</a>
       </section>
